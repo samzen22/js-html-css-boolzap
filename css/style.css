@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 /* GENERALI */
@@ -15,6 +16,10 @@ img {
 }
 i:hover {
   cursor: pointer;
+}
+h3 {
+  font-size: 15px;
+  color: black;
 }
 input:focus{
   outline: none;
@@ -94,10 +99,10 @@ input:focus{
   padding-left: 10px;
 }
 .text-notifiche h3 {
-  font-size: 13px;
+  font-size: 12px;
 }
 .text-notifiche a {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 /* box search */
@@ -109,13 +114,14 @@ input:focus{
   width: 95%;
   height: 35px;
   margin: 5px auto;
+  overflow: hidden;
 }
 .box-search i {
   color: #b1b1b1;
   padding-right: 15px;
 }
 .box-search input {
-  width: 110%;
+  width: 120%;
   border: none;
 }
 
@@ -146,13 +152,9 @@ input:focus{
   font-size: 13px;
   color: #d5dbd8;
 }
-.text-top h3 {
-  font-size: 16px;
-  color: black;
-}
 .text-bottom {
   color: #d5dbd8;
-  font-size: 13px
+  font-size: 12px
 }
 
 
@@ -164,6 +166,16 @@ input:focus{
   border-left: 1px solid #b1b1b1;
 }
 
+/* top col right */
+.avatar-current {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.avatar-current p {
+  font-size: 11px;
+  color: gray;
+}
 
 /* box messaggi */
 .box-messaggi {
