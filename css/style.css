@@ -178,12 +178,51 @@ input:focus{
 }
 
 /* box messaggi */
-.box-messaggi {
+.container-messaggi {
   background-image: url(../img/mine.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100% - 130px);
 }
+.box-messaggi{
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.messaggio {
+  width: 30%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.text-messaggio.bottom {
+  text-align: right;
+  color: gray;
+}
+.text-messaggio.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-messaggio.top i {
+  display: none;
+}
+.messaggio:hover i{
+  display: flex;
+}
+.messaggio.mandato {
+  background-color: #d5f9ba;
+  margin-left: 70%;
+}
+.messaggio.ricevuto {
+  background-color: white;
+}
+
+
+
+
 
 /* footer messaggi */
 .footer-messaggi {
