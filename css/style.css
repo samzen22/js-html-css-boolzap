@@ -37,7 +37,6 @@ input:focus{
   width: 100%;
   height: 90%;
   display: flex;
-  background-color: black; /* TO DO - REMOVE*/
 }
 
 
@@ -138,6 +137,7 @@ input:focus{
 }
 .contact-text {
   padding-left: 10px;
+  width: 80%;
 }
 .text-top {
   display: flex;
@@ -159,8 +159,35 @@ input:focus{
 /* COL RIGHT*/
 .col.right {
   width: 70%;
-  background-color: red;
 }
 .col.right .top-col {
   border-left: 1px solid #b1b1b1;
+}
+
+
+/* box messaggi */
+.box-messaggi {
+  background-image: url(../img/mine.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100% - 130px);
+}
+
+/* footer messaggi */
+.footer-messaggi {
+  background-color: #f3eeea;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-messaggi i {
+  color: #6b7376;
+  font-size: 1.3em;
+}
+.footer-messaggi input {
+  padding: 15px;
+  width: 75%;
+  border: none;
 }
