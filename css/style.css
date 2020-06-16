@@ -31,6 +31,9 @@ input:focus{
 .active {
   display: block;
 }
+.hidden {
+  display: none;
+}
 
 /* WRAPPER e CONTAINER*/
 .wrapper {
@@ -216,6 +219,34 @@ input:focus{
 .messaggio:hover i{
   display: flex;
 }
+
+/* dropdown */
+.with-dropdown {
+  position: relative;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 33px;
+  right: 40px;
+}
+.info-messaggio {
+  list-style-type: none;
+  background-color: white;
+  width: 150%;
+}
+.info-messaggio li {
+  padding: 5px;
+}
+.info-messaggio li a {
+  text-decoration: none;
+  color: black;
+}
+.dropdown.active {
+  display: block;
+}
+
+
 .messaggio.mandato {
   background-color: #d5f9ba;
   margin-left: 70%;
@@ -223,6 +254,8 @@ input:focus{
 .messaggio.ricevuto {
   background-color: white;
 }
+
+/* template */
 .template {
   display: none;
 }
