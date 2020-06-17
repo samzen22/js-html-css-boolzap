@@ -5,16 +5,25 @@ $(document).ready( function() {
     if (event.which === 13 || event.keycode === 13) {
       sendMessage()
 
-      setTimeout(function(){
-        receivedMessage()
-      }, 2000);
+      // ad ogni messaggio l'utente riceve una risposta da parte
+      // del pc con scritto 'ok'
+      setTimeout(receivedMessage, 2000);
     }
   });
 
   // invio il messaggio con il click sull'icona 'paper plane'
   $('.icon-send-message').click( function() {
       sendMessage()
+
+      // ad ogni messaggio l'utente riceve una risposta da parte
+      // del pc con scritto 'ok'
+      setTimeout(receivedMessage, 2000);
+
   });
+
+  // cerca nome tra lista contatti
+  searchContact()
+
 
   // FUNZIONI
 
@@ -89,6 +98,34 @@ $(document).ready( function() {
     var orario = addZero(ora) + ':' + addZero(minuti);
     return orario;
   };
+
+
+  // funzione per trovare nomi nella lista dei contatti
+  function searchContact(){
+    // prendo il valore dopo l'inserimento di ogni carattere nella barra search
+    $('.input-search input').keyup( function(){
+      // salvo il valore in una variabile
+      var searchText = $('.input-search input').val().toLowerCase();
+      // controllo la lista di tutti gli item
+      $('.contanct-list .contact-item').each( function(){
+        // creo una variabile per inserire il nome di ogni contatto
+        var nameContact = $(this).find('.text-top h3').text().toLowerCase();
+        // se il i caratteri della variabile (searchText) sono presenti
+        // nel nome del contatto lo mostro
+        if(nameContact.includes(searchText)){
+          $(this).show()
+        }else{
+          $(this).hide()
+        }
+      });
+    });
+  }
+
+
+
+
+
+
 
   //// CLICK DROPDOWN DA RIVEDERE
   // click per aprire/chiudere il menu dei messaggi
