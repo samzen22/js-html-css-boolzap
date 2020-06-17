@@ -105,14 +105,14 @@ $(document).ready( function() {
     // prendo il valore dopo l'inserimento di ogni carattere nella barra search
     $('.input-search input').keyup( function(){
       // salvo il valore in una variabile
-      var searchText = $('.input-search input').val().toLowerCase();
+      var searchName = $('.input-search input').val().toLowerCase();
       // controllo la lista di tutti gli item
       $('.contanct-list .contact-item').each( function(){
         // creo una variabile per inserire il nome di ogni contatto
         var nameContact = $(this).find('.text-top h3').text().toLowerCase();
         // se il i caratteri della variabile (searchText) sono presenti
         // nel nome del contatto lo mostro
-        if(nameContact.includes(searchText)){
+        if(nameContact.includes(searchName)){
           $(this).show()
         }else{
           $(this).hide()
@@ -129,6 +129,11 @@ $(document).ready( function() {
 
   //// CLICK DROPDOWN DA RIVEDERE
   // click per aprire/chiudere il menu dei messaggi
+  $(document).on('click', '.with-dropdown', function(){
+    $(this).children('.dropdown').toggleClass('active');
+  });
+
+
   // $('.with-dropdown').click( function() {
   //   $(this).find('.dropdown').toggleClass('active');
   // });
@@ -138,11 +143,6 @@ $(document).ready( function() {
   //   $(this).parents('.messaggio').addClass('hidden');
   // });
 
-  // $('.with-dropdown').on('click', function(){
-  //
-  //   $(this).parents('.dropdown').addClass('active');
-  //   console.log('ok');
-  // });
   //
   // $(document).on('click', '.elimina-messaggio', function(){
   //   $(this).parents('.messaggio').addClass('hidden');

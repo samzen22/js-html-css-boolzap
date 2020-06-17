@@ -235,7 +235,7 @@ input:focus{
 .info-messaggio {
   list-style-type: none;
   background-color: white;
-  width: 150%;
+  width: 90px;
 }
 .info-messaggio li {
   padding: 5px;
