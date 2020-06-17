@@ -27,6 +27,9 @@ $(document).ready( function() {
   // click per aprire/chiudere il menu dei messaggi
   $(document).on('click', '.with-dropdown', function(){
     $(this).children('.dropdown').toggleClass('active');
+
+    // scroll automatico nel caso fosse l'ultimo messaggio
+    $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
   });
 
   // // click sul li 'elimina messaggio' per eliminare l'intero messaggio
