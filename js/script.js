@@ -24,6 +24,16 @@ $(document).ready( function() {
   // cerca nome tra lista contatti
   searchContact()
 
+  // click per aprire/chiudere il menu dei messaggi
+  $(document).on('click', '.with-dropdown', function(){
+    $(this).children('.dropdown').toggleClass('active');
+  });
+
+  // // click sul li 'elimina messaggio' per eliminare l'intero messaggio
+  $(document).on('click', '.elimina-messaggio', function(){
+    $(this).parents('.messaggio').addClass('hidden');
+  });
+
 
   // FUNZIONI
 
@@ -120,33 +130,5 @@ $(document).ready( function() {
       });
     });
   }
-
-
-
-
-
-
-
-  //// CLICK DROPDOWN DA RIVEDERE
-  // click per aprire/chiudere il menu dei messaggi
-  $(document).on('click', '.with-dropdown', function(){
-    $(this).children('.dropdown').toggleClass('active');
-  });
-
-
-  // $('.with-dropdown').click( function() {
-  //   $(this).find('.dropdown').toggleClass('active');
-  // });
-
-  // click sul li elimina messaggio per eliminare l'intero messaggio
-  // $('.elimina-messaggio').click( function(){
-  //   $(this).parents('.messaggio').addClass('hidden');
-  // });
-
-  //
-  // $(document).on('click', '.elimina-messaggio', function(){
-  //   $(this).parents('.messaggio').addClass('hidden');
-  // });
-
 
 }); // !!! document ready close !!!
