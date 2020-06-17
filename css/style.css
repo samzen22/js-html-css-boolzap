@@ -203,6 +203,7 @@ input:focus{
   border-radius: 10px;
   font-size: 12px;
   margin-bottom: 10px;
+  word-break: break-word;
 }
 .text-messaggio.bottom {
   text-align: right;
@@ -212,6 +213,7 @@ input:focus{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 5px;
 }
 .text-messaggio.top i {
   display: none;
