@@ -27,7 +27,7 @@ $(document).ready( function() {
   // click per aprire/chiudere il menu dei messaggi
   $(document).on('click', '.with-dropdown', function(){
 
-    $('.messaggio').siblings().find('.with-dropdown').children('.dropdown').removeClass('active');
+    $(this).parents('.messaggio').siblings().find('.with-dropdown').children('.dropdown').removeClass('active');
 
     $(this).children('.dropdown').toggleClass('active');
 
