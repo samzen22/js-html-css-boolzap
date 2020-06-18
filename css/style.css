@@ -146,6 +146,7 @@ input:focus{
 }
 .contact-item:hover {
   background-color: #b1b1b1;
+  cursor: pointer;
 }
 .contact-text {
   padding-left: 10px;
@@ -193,9 +194,12 @@ input:focus{
 .box-messaggi{
   padding: 30px;
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   overflow-y: auto;
+}
+.box-messaggi.active {
+  display: flex;
 }
 .messaggio {
   width: 30%;

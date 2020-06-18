@@ -1,5 +1,8 @@
 $(document).ready( function() {
 
+  // cerca nome tra lista contatti
+  searchContact()
+
   // invio il messaggio con il tasto invio della tastiera
   $('.invia-messaggio').keypress( function(event){
     if (event.which === 13 || event.keycode === 13) {
@@ -10,7 +13,6 @@ $(document).ready( function() {
     }
   });
 
-
   // invio il messaggio con il click sull'icona 'paper plane'
   $('.icon-send-message').click( function() {
       sendMessage()
@@ -20,26 +22,34 @@ $(document).ready( function() {
 
   });
 
-  // cerca nome tra lista contatti
-  searchContact()
-
 
   // click per aprire/chiudere il menu dei messaggi
   $(document).on('click', '.with-dropdown', function(){
-
+    // rimuovo la classe active dalle dropdown aperte in precedenza
     $(this).parents('.messaggio').siblings().find('.with-dropdown').children('.dropdown').removeClass('active');
-
+    // aprire/chiudere il menu dei messaggi
     $(this).children('.dropdown').toggleClass('active');
-
-
     // scroll automatico nel caso fosse l'ultimo messaggio
     $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
   });
 
-
   // // click sul li 'elimina messaggio' per eliminare l'intero messaggio
   $(document).on('click', '.elimina-messaggio', function(){
     $(this).parents('.messaggio').addClass('hidden');
+  });
+
+
+
+  // cambio e mostro la chat corretta al click sul contatto
+  $('.contact-item').click( function() {
+    // variabile in cui inserisco l'attributo corrispondente al contatto
+    var selectContact = $(this).attr('data-contact');
+    // rimuovo classe active dalla chat Attiva
+    $('.box-messaggi').removeClass('active');
+    // variabile per selezionare la chat corrispondente al contatto
+    var selectChat = '.box-messaggi[data-chat="' + selectContact + '"]';
+    // aggiungo classe active alla chat corrispondente
+    $(selectChat).addClass('active');
   });
 
 
