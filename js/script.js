@@ -70,9 +70,9 @@ $(document).ready( function() {
       // aggiungo l'ora corrente al messaggio
       templateMessaggio.find('.text-messaggio.bottom p').text(currentTime());
       // appendo il template messaggio nel box messaggi
-      $('.box-messaggi').append(templateMessaggio).addClass('active');
+      $('.box-messaggi.active').append(templateMessaggio).addClass('active');
       // scroll all'inserimento del messaggio
-      $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
+      $('.box-messaggi.active').scrollTop( $('.box-messaggi').height() );
       // cancello il messaggio inviato dall'input
       $('.invia-messaggio').val('');
     }
@@ -90,9 +90,9 @@ $(document).ready( function() {
     // aggiungo l'ora corrente al messaggio
     templateMessaggio.find('.text-messaggio.bottom p').text(currentTime());
     // appendo il template messaggio nel box messaggi
-    $('.box-messaggi').append(templateMessaggio).addClass('active');
+    $('.box-messaggi.active').append(templateMessaggio).addClass('active');
     // scroll all'inserimento del messaggio
-    $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
+    $('.box-messaggi.active').scrollTop( $('.box-messaggi').height() );
   };
 
 
