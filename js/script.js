@@ -36,7 +36,7 @@ $(document).ready( function() {
     // aprire/chiudere il menu dei messaggi
     $(this).children('.dropdown').toggleClass('active');
     // scroll automatico nel caso fosse l'ultimo messaggio
-    $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
+    $('.box-messaggi').scrollTop( $('.box-messaggi').prop('scrollHeight') );
   });
 
   // // click sul li 'elimina messaggio' per eliminare l'intero messaggio
@@ -86,7 +86,7 @@ $(document).ready( function() {
       // appendo il template messaggio nel box messaggi
       $('.box-messaggi.active').append(templateMessaggio).addClass('active');
       // scroll all'inserimento del messaggio
-      $('.box-messaggi.active').scrollTop( $('.box-messaggi').height() );
+      $('.box-messaggi.active').scrollTop( $('.box-messaggi').prop('scrollHeight') );
       // cancello il messaggio inviato dall'input
       $('.invia-messaggio').val('');
     }
@@ -106,7 +106,7 @@ $(document).ready( function() {
     // appendo il template messaggio nel box messaggi
     $('.box-messaggi.active').append(templateMessaggio).addClass('active');
     // scroll all'inserimento del messaggio
-    $('.box-messaggi.active').scrollTop( $('.box-messaggi').height() );
+    $('.box-messaggi.active').scrollTop( $('.box-messaggi').prop('scrollHeight') );
   };
 
 
