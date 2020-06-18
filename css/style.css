@@ -148,7 +148,7 @@ input:focus{
   background-color: #b1b1b1;
   cursor: pointer;
 }
-.contact-text {
+.contact-name {
   padding-left: 10px;
   width: 80%;
 }

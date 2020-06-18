@@ -1,5 +1,11 @@
 $(document).ready( function() {
 
+  // $('.contact-item').click( function() {
+  //   var nameContact = $(this).find('.text-top h3').text();
+  //   var avatarContact = $(this).find('.avatar img').attr();
+  //   console.log(nameContact);
+  // });
+
   // cerca nome tra lista contatti
   searchContact()
 
@@ -41,6 +47,7 @@ $(document).ready( function() {
 
 
   // cambio e mostro la chat corretta al click sul contatto
+  // e assegno l'avatar e il nome in alto
   $('.contact-item').click( function() {
     // variabile in cui inserisco l'attributo corrispondente al contatto
     var selectContact = $(this).attr('data-contact');
@@ -50,6 +57,13 @@ $(document).ready( function() {
     var selectChat = '.box-messaggi[data-chat="' + selectContact + '"]';
     // aggiungo classe active alla chat corrispondente
     $(selectChat).addClass('active');
+
+
+    // cambio il contatto nella colonna di destra in alto
+    var nameContact = $(this).find('.text-top h3').text();
+    var avatarContact = $(this).find('.avatar img').attr('src');
+    $('.avatar-current .contact-name h3').text(nameContact);
+    $('.avatar-current img').attr('src', avatarContact);
   });
 
 
