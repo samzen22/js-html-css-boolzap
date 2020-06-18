@@ -4,17 +4,16 @@ $(document).ready( function() {
   $('.invia-messaggio').keypress( function(event){
     if (event.which === 13 || event.keycode === 13) {
       sendMessage()
-
       // ad ogni messaggio l'utente riceve una risposta da parte
       // del pc con scritto 'ok'
       setTimeout(receivedMessage, 2000);
     }
   });
 
+
   // invio il messaggio con il click sull'icona 'paper plane'
   $('.icon-send-message').click( function() {
       sendMessage()
-
       // ad ogni messaggio l'utente riceve una risposta da parte
       // del pc con scritto 'ok'
       setTimeout(receivedMessage, 2000);
@@ -24,13 +23,19 @@ $(document).ready( function() {
   // cerca nome tra lista contatti
   searchContact()
 
+
   // click per aprire/chiudere il menu dei messaggi
   $(document).on('click', '.with-dropdown', function(){
+
+    $('.messaggio').siblings().find('.with-dropdown').children('.dropdown').removeClass('active');
+
     $(this).children('.dropdown').toggleClass('active');
+
 
     // scroll automatico nel caso fosse l'ultimo messaggio
     $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
   });
+
 
   // // click sul li 'elimina messaggio' per eliminare l'intero messaggio
   $(document).on('click', '.elimina-messaggio', function(){
@@ -44,52 +49,42 @@ $(document).ready( function() {
   function sendMessage() {
     // copio il messaggio inviato in una variabile
     var messaggio = $('.invia-messaggio').val();
-
     // controllo che venga scritto almeno un carattere se no il messaggio non parte
     if (messaggio != 0) {
       // clono il template messaggio
       var templateMessaggio = $('.template > .messaggio').clone();
-
       // aggiungo la classe del messagio mandato
       templateMessaggio.addClass('mandato');
-
       // aggiungo il testo della variabile messaggio nel template messaggio
       templateMessaggio.find('.text-messaggio.top h4').text(messaggio);
-
       // aggiungo l'ora corrente al messaggio
       templateMessaggio.find('.text-messaggio.bottom p').text(currentTime());
-
       // appendo il template messaggio nel box messaggi
       $('.box-messaggi').append(templateMessaggio).addClass('active');
-
       // scroll all'inserimento del messaggio
       $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
-
       // cancello il messaggio inviato dall'input
       $('.invia-messaggio').val('');
     }
   };
 
+
   // Funzione per ricevere il messaggio
   function receivedMessage() {
     // clono il template messaggio
     var templateMessaggio = $('.template > .messaggio').clone();
-
     // aggiungo la classe del messagio mandato
     templateMessaggio.addClass('ricevuto');
-
     // aggiungo il testo della variabile messaggio nel template messaggio
     templateMessaggio.find('.text-messaggio.top h4').text('ok');
-
     // aggiungo l'ora corrente al messaggio
     templateMessaggio.find('.text-messaggio.bottom p').text(currentTime());
-
     // appendo il template messaggio nel box messaggi
     $('.box-messaggi').append(templateMessaggio).addClass('active');
-
     // scroll all'inserimento del messaggio
     $('.box-messaggi').scrollTop( $('.box-messaggi').height() );
   };
+
 
   // funzione per aggiungere uno zero ai numeri minori di 10
   // --- number: numero da controllare se < o > di 10
@@ -133,5 +128,6 @@ $(document).ready( function() {
       });
     });
   }
+
 
 }); // !!! document ready close !!!
