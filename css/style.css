@@ -37,9 +37,10 @@ input:focus{
 
 /* WRAPPER e CONTAINER*/
 .wrapper {
-  /* min-width: 900px; */ /* TO DO - ADD*/
-  max-width: 75%;
+  width: 80%;
+  min-width: 850px;
   height: 100vh;
+  min-height: 260px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -233,8 +234,9 @@ input:focus{
 .dropdown {
   display: none;
   position: absolute;
-  top: 33px;
-  right: 40px;
+  right: 35px;
+  top: 30px;
+  box-shadow: 1px -1px 6px 1px rgba(0,0,0,0.62);
 }
 .info-messaggio {
   list-style-type: none;
@@ -244,9 +246,13 @@ input:focus{
 .info-messaggio li {
   padding: 5px;
 }
+.info-messaggio li a:hover {
+  color: gray;
+}
 .info-messaggio li a {
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 .dropdown.active {
   display: block;
