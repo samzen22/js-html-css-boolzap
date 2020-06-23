@@ -7,7 +7,10 @@ $(document).ready( function() {
   // });
 
   // cerca nome tra lista contatti
-  searchContact()
+  $('.input-search input').keyup( function(){
+    searchContact()
+  });
+
 
   // invio il messaggio con il tasto invio della tastiera
   $('.invia-messaggio').keypress( function(event){
@@ -135,21 +138,19 @@ $(document).ready( function() {
   // funzione per trovare nomi nella lista dei contatti
   function searchContact(){
     // prendo il valore dopo l'inserimento di ogni carattere nella barra search
-    $('.input-search input').keyup( function(){
-      // salvo il valore in una variabile
-      var searchName = $('.input-search input').val().toLowerCase();
-      // controllo la lista di tutti gli item
-      $('.contanct-list .contact-item').each( function(){
-        // creo una variabile per inserire il nome di ogni contatto
-        var nameContact = $(this).find('.text-top h3').text().toLowerCase();
-        // se il i caratteri della variabile (searchText) sono presenti
-        // nel nome del contatto lo mostro
-        if(nameContact.includes(searchName)){
-          $(this).show()
-        }else{
-          $(this).hide()
-        }
-      });
+    // salvo il valore in una variabile
+    var searchName = $('.input-search input').val().toLowerCase();
+    // controllo la lista di tutti gli item
+    $('.contanct-list .contact-item').each( function(){
+      // creo una variabile per inserire il nome di ogni contatto
+      var nameContact = $(this).find('.text-top h3').text().toLowerCase();
+      // se il i caratteri della variabile (searchText) sono presenti
+      // nel nome del contatto lo mostro
+      if(nameContact.includes(searchName)){
+        $(this).show()
+      }else{
+        $(this).hide()
+      }
     });
   }
 
